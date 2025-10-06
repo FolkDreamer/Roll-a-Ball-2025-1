@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
-    public float fatorDeCrescimento = 0.5f;
+    public float fatorDeCrescimento = 1f;
         void Start()
     {
         rb = GetComponent<Rigidbody>();
