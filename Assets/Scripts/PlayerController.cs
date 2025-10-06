@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     private int count;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
-    void Start()
+    public float fatorDeCrescimento = 0.5f;
+        void Start()
     {
         rb = GetComponent<Rigidbody>();
         count = 0;
@@ -31,12 +32,13 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+            transform.localScale += Vector3.one * fatorDeCrescimento;
         }
     }
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 3)
+        if (count >= 10)
         {
             winTextObject.SetActive(true);
         }
